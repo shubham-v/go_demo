@@ -1,3 +1,5 @@
+package main
+
 import (
 	"net/http/httputil"
 	"net/url"
@@ -17,7 +19,7 @@ func (b *Backend) SetAlive(alive bool) {
 	b.mux.Unlock()
 }
 
-func (b *backend) IsAlive() (alive bool) {
+func (b *Backend) IsAlive() (alive bool) {
 	b.mux.RLock()
 	alive = b.Alive
 	b.mux.RUnlock()
